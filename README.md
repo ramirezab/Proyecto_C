@@ -1,2 +1,2 @@
 # Proyecto_C
-Proyecto de programación en C para el curso de programación bajo plataformas abiertas
+Proyecto de programación en C para el curso de programación bajo plataformas abiertas asdf
