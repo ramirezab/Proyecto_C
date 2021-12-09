@@ -2,6 +2,15 @@
 #include <stdio.h>
 #include <string.h>
 
+char *lb1 = "a";
+char *lb2 = "b";
+char *lb3 = "c";
+char *lb4 = "d";
+char *lb5 = "e";
+char *lb6 = "f";
+char *lb7 = "g";
+char *lb8 = "h";
+char *lb9 = "i";
 char *figura1 = "X";
 char *figura2 = "O";
 
@@ -11,12 +20,52 @@ void swap(char **a, char **b) {
     *b = temp;
 }
 
+void set_char(char **a, char **b){
+
+    *a = *b;
+
+}
+
+void condicion_victoria(){
+
+    if (strcmp(lb1, lb2) == 0 && strcmp(lb2, lb3) == 0){
+        g_print("Victoria de %s", figura1);
+    }
+    else if (strcmp(lb4, lb5) == 0 && strcmp(lb5, lb6) == 0){
+        g_print("Victoria de %s", figura1);
+    }
+    else if (strcmp(lb7, lb8) == 0 && strcmp(lb8, lb9) == 0){
+        g_print("Victoria de %s", figura1);
+    }
+    else if (strcmp(lb1, lb4) == 0 && strcmp(lb4, lb7) == 0){
+        g_print("Victoria de %s", figura1);
+    }
+    else if (strcmp(lb2, lb5) == 0 && strcmp(lb5, lb8) == 0){
+        g_print("Victoria de %s", figura1);
+    }
+    else if (strcmp(lb3, lb6) == 0 && strcmp(lb6, lb9) == 0){
+        g_print("Victoria de %s", figura1);
+    }
+    else if (strcmp(lb1, lb5) == 0 && strcmp(lb5, lb9) == 0){
+        g_print("Victoria de %s", figura1);
+    }
+    else if (strcmp(lb3, lb5) == 0 && strcmp(lb5, lb7) == 0){
+        g_print("Victoria de %s", figura1);
+    }
+
+
+
+}
+
 void on_clicked_1(GtkWidget *widget, gpointer data) {
-    
+
     GtkLabel *label = (GtkLabel*) data;
     GtkButton *button_1= (GtkButton*) widget;
     gtk_button_set_label(button_1, figura1);
+    set_char(&lb1, &figura1);
+    g_print("%s \n",lb1);
     g_print("Button 1 Clicked\n");
+    condicion_victoria();
     swap(&figura1, &figura2);
 
 }
@@ -25,16 +74,22 @@ void on_clicked_2(GtkWidget *widget, gpointer data) {
     GtkLabel *label = (GtkLabel*) data;
     GtkButton *button_2= (GtkButton*) widget;
     gtk_button_set_label(button_2, figura1);
+    set_char(&lb2, &figura1);
+    g_print("%s \n",lb2);    
     g_print("Button 2 Clicked\n");
+    condicion_victoria();
     swap(&figura1, &figura2);
-    
+
 }
 
 void on_clicked_3(GtkWidget *widget, gpointer data) {
     GtkLabel *label = (GtkLabel*) data;
     GtkButton *button_3= (GtkButton*) widget;
     gtk_button_set_label(button_3, figura1);
+    set_char(&lb3, &figura1);
+    g_print("%s \n",lb3);
     g_print("Button 3 Clicked\n");
+    condicion_victoria();
     swap(&figura1, &figura2);
 }
 
@@ -42,7 +97,10 @@ void on_clicked_4(GtkWidget *widget, gpointer data) {
     GtkLabel *label = (GtkLabel*) data;
     GtkButton *button_4= (GtkButton*) widget;
     gtk_button_set_label(button_4, figura1);
+    set_char(&lb4, &figura1);
+    g_print("%s \n",lb4);
     g_print("Button 4 Clicked\n");
+    condicion_victoria();
     swap(&figura1, &figura2);
 }
 
@@ -50,7 +108,10 @@ void on_clicked_5(GtkWidget *widget, gpointer data) {
     GtkLabel *label = (GtkLabel*) data;
     GtkButton *button_5= (GtkButton*) widget;
     gtk_button_set_label(button_5, figura1);
+    set_char(&lb5, &figura1);
+    g_print("%s \n",lb5);
     g_print("Button 5 Clicked\n");
+    condicion_victoria();
     swap(&figura1, &figura2);
 }
 
@@ -58,7 +119,10 @@ void on_clicked_6(GtkWidget *widget, gpointer data) {
     GtkLabel *label = (GtkLabel*) data;
     GtkButton *button_6= (GtkButton*) widget;
     gtk_button_set_label(button_6, figura1);
+    set_char(&lb6, &figura1);
+    g_print("%s \n",lb6);
     g_print("Button 6 Clicked\n");
+    condicion_victoria();
     swap(&figura1, &figura2);
 }
 
@@ -66,7 +130,10 @@ void on_clicked_7(GtkWidget *widget, gpointer data) {
     GtkLabel *label = (GtkLabel*) data;
     GtkButton *button_7= (GtkButton*) widget;
     gtk_button_set_label(button_7, figura1);
+    set_char(&lb7, &figura1);
+    g_print("%s \n",lb7);
     g_print("Button 7 Clicked\n");
+    condicion_victoria();
     swap(&figura1, &figura2);
 }
 
@@ -75,7 +142,10 @@ void on_clicked_8(GtkWidget *widget, gpointer data) {
     GtkLabel *label = (GtkLabel*) data;
     GtkButton *button_8= (GtkButton*) widget;
     gtk_button_set_label(button_8, figura1);
+    set_char(&lb8, &figura1);
+    g_print("%s \n",lb8);
     g_print("Button 8 Clicked\n");
+    condicion_victoria();
     swap(&figura1, &figura2);
 }
 
@@ -83,14 +153,18 @@ void on_clicked_9(GtkWidget *widget, gpointer data) {
     GtkLabel *label = (GtkLabel*) data;
     GtkButton *button_9= (GtkButton*) widget;
     gtk_button_set_label(button_9, figura1);
+    set_char(&lb9, &figura1);
+    g_print("%s \n",lb9);
     g_print("Button 9 Clicked\n");
+    condicion_victoria();
     swap(&figura1, &figura2);
 }
 
 int main(int argc, char* argv[]) {
 
 
-    
+
+
     GtkBuilder *builder;
     GtkWidget *window;
     GtkWidget *button_1;
@@ -102,7 +176,7 @@ int main(int argc, char* argv[]) {
     GtkWidget *button_7;
     GtkWidget *button_8;
     GtkWidget *button_9;
-    
+
     GtkWidget *label;
 
     gtk_init(&argc, &argv);
@@ -122,7 +196,7 @@ int main(int argc, char* argv[]) {
     button_7 = GTK_WIDGET(gtk_builder_get_object(builder, "button_7"));
     button_8 = GTK_WIDGET(gtk_builder_get_object(builder, "button_8"));
     button_9 = GTK_WIDGET(gtk_builder_get_object(builder, "button_9"));
-    
+
     label = GTK_WIDGET(gtk_builder_get_object(builder, "label_1"));
 
     g_signal_connect(button_1, "clicked", G_CALLBACK(on_clicked_1), NULL);
@@ -134,6 +208,8 @@ int main(int argc, char* argv[]) {
     g_signal_connect(button_7, "clicked", G_CALLBACK(on_clicked_7), NULL);
     g_signal_connect(button_8, "clicked", G_CALLBACK(on_clicked_8), NULL);
     g_signal_connect(button_9, "clicked", G_CALLBACK(on_clicked_9), NULL);
+
+  
 
     // Show and start main loop
     gtk_widget_show_all(window);
