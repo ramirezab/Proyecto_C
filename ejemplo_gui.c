@@ -2,74 +2,94 @@
 #include <stdio.h>
 #include <string.h>
 
-char *figura = "X";
+char *figura1 = "X";
+char *figura2 = "O";
+
+void swap(char *a, char *b) {
+    char temp = *a;
+    *a = *b;
+    *b = temp;
+}
+
 void on_clicked_1(GtkWidget *widget, gpointer data) {
     
     GtkLabel *label = (GtkLabel*) data;
     GtkButton *button_1= (GtkButton*) widget;
-    gtk_button_set_label(button_1, figura);
+    gtk_button_set_label(button_1, figura1);
     g_print("Button 1 Clicked\n");
+    swap(&figura1, &figura2);
 
 }
 
 void on_clicked_2(GtkWidget *widget, gpointer data) {
     GtkLabel *label = (GtkLabel*) data;
     GtkButton *button_2= (GtkButton*) widget;
-    gtk_button_set_label(button_2, figura);
+    gtk_button_set_label(button_2, figura1);
     g_print("Button 2 Clicked\n");
+    swap(&figura1, &figura2);
+    
 }
 
 void on_clicked_3(GtkWidget *widget, gpointer data) {
     GtkLabel *label = (GtkLabel*) data;
     GtkButton *button_3= (GtkButton*) widget;
-    gtk_button_set_label(button_3, figura);
-    g_print("Button 2 Clicked\n");
+    gtk_button_set_label(button_3, figura1);
+    g_print("Button 3 Clicked\n");
+    swap(&figura1, &figura2);
 }
 
 void on_clicked_4(GtkWidget *widget, gpointer data) {
     GtkLabel *label = (GtkLabel*) data;
     GtkButton *button_4= (GtkButton*) widget;
-    gtk_button_set_label(button_4, figura);
-    g_print("Button 2 Clicked\n");
+    gtk_button_set_label(button_4, figura1);
+    g_print("Button 4 Clicked\n");
+    swap(&figura1, &figura2);
 }
 
 void on_clicked_5(GtkWidget *widget, gpointer data) {
     GtkLabel *label = (GtkLabel*) data;
     GtkButton *button_5= (GtkButton*) widget;
-    gtk_button_set_label(button_5, figura);
-    g_print("Button 2 Clicked\n");
+    gtk_button_set_label(button_5, figura1);
+    g_print("Button 5 Clicked\n");
+    swap(&figura1, &figura2);
 }
 
 void on_clicked_6(GtkWidget *widget, gpointer data) {
     GtkLabel *label = (GtkLabel*) data;
     GtkButton *button_6= (GtkButton*) widget;
-    gtk_button_set_label(button_6, figura);
-    g_print("Button 2 Clicked\n");
+    gtk_button_set_label(button_6, figura1);
+    g_print("Button 6 Clicked\n");
+    swap(&figura1, &figura2);
 }
 
 void on_clicked_7(GtkWidget *widget, gpointer data) {
     GtkLabel *label = (GtkLabel*) data;
     GtkButton *button_7= (GtkButton*) widget;
-    gtk_button_set_label(button_7, figura);
-    g_print("Button 2 Clicked\n");
+    gtk_button_set_label(button_7, figura1);
+    g_print("Button 7 Clicked\n");
+    swap(&figura1, &figura2);
 }
 
 
 void on_clicked_8(GtkWidget *widget, gpointer data) {
     GtkLabel *label = (GtkLabel*) data;
     GtkButton *button_8= (GtkButton*) widget;
-    gtk_button_set_label(button_8, figura);
-    g_print("Button 2 Clicked\n");
+    gtk_button_set_label(button_8, figura1);
+    g_print("Button 8 Clicked\n");
+    swap(&figura1, &figura2);
 }
 
 void on_clicked_9(GtkWidget *widget, gpointer data) {
     GtkLabel *label = (GtkLabel*) data;
     GtkButton *button_9= (GtkButton*) widget;
-    gtk_button_set_label(button_9, figura);
-    g_print("Button 2 Clicked\n");
+    gtk_button_set_label(button_9, figura1);
+    g_print("Button 9 Clicked\n");
+    swap(&figura1, &figura2);
 }
 
 int main(int argc, char* argv[]) {
+
+
     
     GtkBuilder *builder;
     GtkWidget *window;
