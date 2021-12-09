@@ -53,8 +53,18 @@ void condicion_victoria(){
         g_print("Victoria de %s", figura1);
     }
 
+    void message_winner() {
+      GtkWidget *window *dialog, *label, *container;
+      dialog = gtk_dialog_new();
+      gtk_window_set_transient_for(GTK_WINDOW(dialog),GTK_WINDOW(window));
+      gtk_window_set_title(GTK_WINDOW(dialog), "GANADOR");
+      gtk_window_set_size_request(dialog, 400, 200);
 
+      label = gtk_label_new(figura1);
+      container = gtk_dialog_get_content_area(GTK_DIALOG(dialog));
+      gtk_container_add(GTK_CONTAINER(container),label);
 
+      gtk_widget_show(dialog);
 }
 
 void on_clicked_1(GtkWidget *widget, gpointer data) {
@@ -75,7 +85,7 @@ void on_clicked_2(GtkWidget *widget, gpointer data) {
     GtkButton *button_2= (GtkButton*) widget;
     gtk_button_set_label(button_2, figura1);
     set_char(&lb2, &figura1);
-    g_print("%s \n",lb2);    
+    g_print("%s \n",lb2);
     g_print("Button 2 Clicked\n");
     condicion_victoria();
     swap(&figura1, &figura2);
@@ -209,7 +219,7 @@ int main(int argc, char* argv[]) {
     g_signal_connect(button_8, "clicked", G_CALLBACK(on_clicked_8), NULL);
     g_signal_connect(button_9, "clicked", G_CALLBACK(on_clicked_9), NULL);
 
-  
+
 
     // Show and start main loop
     gtk_widget_show_all(window);
