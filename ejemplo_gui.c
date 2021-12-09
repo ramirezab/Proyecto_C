@@ -5,8 +5,8 @@
 char *figura1 = "X";
 char *figura2 = "O";
 
-void swap(char *a, char *b) {
-    char temp = *a;
+void swap(char **a, char **b) {
+    char *temp = *a;
     *a = *b;
     *b = temp;
 }
