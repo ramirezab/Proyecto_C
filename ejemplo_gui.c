@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <string.h>
 
+// Valores para inicializar la comparación de figuras
 char *lb1 = "a";
 char *lb2 = "b";
 char *lb3 = "c";
@@ -11,9 +12,12 @@ char *lb6 = "f";
 char *lb7 = "g";
 char *lb8 = "h";
 char *lb9 = "i";
+
+// Figuras del juego
 char *figura1 = "X";
 char *figura2 = "O";
 
+// Declaración de los botones
 GtkButton *button_1;
 GtkButton *button_2;
 GtkButton *button_3;
@@ -24,12 +28,14 @@ GtkButton *button_7;
 GtkButton *button_8;
 GtkButton *button_9;
 
+//  Esta función cambia el valor de la figura cuando se clikea en un cuadro
 void swap(char **a, char **b) {
     char *temp = *a;
     *a = *b;
     *b = temp;
 }
 
+// Asigna la figura a una variable para analizarla
 void set_char(char **a, char **b){
 
     *a = *b;
@@ -37,7 +43,8 @@ void set_char(char **a, char **b){
 }
 void clean_board();
 
-
+// Mediante la función "strcmp" se comparan los valores de las variables
+// para elegir a un ganador
 void condicion_victoria(){
 
     if (strcmp(lb1, lb2) == 0 && strcmp(lb2, lb3) == 0){
@@ -90,6 +97,7 @@ void message_winner() {
 }
 */
 
+// Función al clickear el boton 1
 void on_clicked_1(GtkWidget *widget, gpointer data) {
 
     GtkLabel *label = (GtkLabel*) data;
@@ -103,18 +111,20 @@ void on_clicked_1(GtkWidget *widget, gpointer data) {
 
 }
 
+// Función al clickear el boton 2
 void on_clicked_2(GtkWidget *widget, gpointer data) {
     GtkLabel *label = (GtkLabel*) data;
     button_2= (GtkButton*) widget;
     gtk_button_set_label(button_2, figura1);
     set_char(&lb2, &figura1);
-    g_print("%s \n",lb2);    
+    g_print("%s \n",lb2);
     g_print("Button 2 Clicked\n");
     condicion_victoria();
     swap(&figura1, &figura2);
 
 }
 
+// Función al clickear el boton 3
 void on_clicked_3(GtkWidget *widget, gpointer data) {
     GtkLabel *label = (GtkLabel*) data;
     button_3= (GtkButton*) widget;
@@ -126,6 +136,7 @@ void on_clicked_3(GtkWidget *widget, gpointer data) {
     swap(&figura1, &figura2);
 }
 
+// Función al clickear el boton 4
 void on_clicked_4(GtkWidget *widget, gpointer data) {
     GtkLabel *label = (GtkLabel*) data;
     button_4= (GtkButton*) widget;
@@ -137,6 +148,7 @@ void on_clicked_4(GtkWidget *widget, gpointer data) {
     swap(&figura1, &figura2);
 }
 
+// Función al clickear el boton 5
 void on_clicked_5(GtkWidget *widget, gpointer data) {
     GtkLabel *label = (GtkLabel*) data;
     button_5= (GtkButton*) widget;
@@ -148,6 +160,7 @@ void on_clicked_5(GtkWidget *widget, gpointer data) {
     swap(&figura1, &figura2);
 }
 
+// Función al clickear el boton 6
 void on_clicked_6(GtkWidget *widget, gpointer data) {
     GtkLabel *label = (GtkLabel*) data;
     button_6= (GtkButton*) widget;
@@ -159,6 +172,7 @@ void on_clicked_6(GtkWidget *widget, gpointer data) {
     swap(&figura1, &figura2);
 }
 
+// Función al clickear el boton 7
 void on_clicked_7(GtkWidget *widget, gpointer data) {
     GtkLabel *label = (GtkLabel*) data;
     button_7= (GtkButton*) widget;
@@ -170,7 +184,7 @@ void on_clicked_7(GtkWidget *widget, gpointer data) {
     swap(&figura1, &figura2);
 }
 
-
+// Función al clickear el boton 8
 void on_clicked_8(GtkWidget *widget, gpointer data) {
     GtkLabel *label = (GtkLabel*) data;
     button_8= (GtkButton*) widget;
@@ -182,6 +196,7 @@ void on_clicked_8(GtkWidget *widget, gpointer data) {
     swap(&figura1, &figura2);
 }
 
+// Función al clickear el boton 9
 void on_clicked_9(GtkWidget *widget, gpointer data) {
     GtkLabel *label = (GtkLabel*) data;
     button_9= (GtkButton*) widget;
@@ -193,6 +208,9 @@ void on_clicked_9(GtkWidget *widget, gpointer data) {
     swap(&figura1, &figura2);
 }
 
+// Reinicia el juego y limpia los labels de los botones a un espacio vacio
+// para volver a jugar, al igual que reinicia las variables a sus valores
+// de iniciación
 void clean_board(){
 
     gtk_button_set_label(button_1, " ");
@@ -213,9 +231,10 @@ void clean_board(){
     lb7 = "g";
     lb8 = "h";
     lb9 = "i";
-        
+
 }
 
+// Ciclo principal del programa
 int main(int argc, char* argv[]) {
 
 
@@ -235,11 +254,13 @@ int main(int argc, char* argv[]) {
 
     GtkWidget *label;
 
+    // Inicializador del GTK
     gtk_init(&argc, &argv);
 
-    // Get GUI from file
+    // Se obtiene el menu del archivo glade
     builder = gtk_builder_new_from_file("glade_template.glade");
 
+    // GTK obtiene la ventana principal
     window = GTK_WIDGET(gtk_builder_get_object(builder, "main_window"));
     g_signal_connect(window, "destroy", G_CALLBACK(gtk_main_quit), NULL);
 
@@ -253,8 +274,11 @@ int main(int argc, char* argv[]) {
     button_8 = GTK_WIDGET(gtk_builder_get_object(builder, "button_8"));
     button_9 = GTK_WIDGET(gtk_builder_get_object(builder, "button_9"));
 
+    // Muestra el mensaje del label
     label = GTK_WIDGET(gtk_builder_get_object(builder, "label_1"));
 
+
+    // Señales de coneccion de cada uno de los botones
     g_signal_connect(button_1, "clicked", G_CALLBACK(on_clicked_1), NULL);
     g_signal_connect(button_2, "clicked", G_CALLBACK(on_clicked_2), NULL);
     g_signal_connect(button_3, "clicked", G_CALLBACK(on_clicked_3), NULL);
@@ -265,9 +289,10 @@ int main(int argc, char* argv[]) {
     g_signal_connect(button_8, "clicked", G_CALLBACK(on_clicked_8), NULL);
     g_signal_connect(button_9, "clicked", G_CALLBACK(on_clicked_9), NULL);
 
-  
 
-    // Show and start main loop
+
+
+    // Muestra e inicia la ventana del juego
     gtk_widget_show_all(window);
     gtk_main();
     return 0;

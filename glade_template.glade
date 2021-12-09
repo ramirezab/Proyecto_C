@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Generated with glade 3.22.1 -->
+<!-- Generated with glade 3.22.2 -->
 <interface>
   <requires lib="gtk+" version="3.20"/>
   <object class="GtkWindow" id="main_window">
@@ -20,6 +20,11 @@
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <property name="label" translatable="yes">Tic Tac Toe</property>
+            <attributes>
+              <attribute name="font-desc" value="Kinnari Bold Oblique 14"/>
+              <attribute name="style" value="oblique"/>
+              <attribute name="foreground" value="#adad7f7fa8a8"/>
+            </attributes>
           </object>
           <packing>
             <property name="expand">True</property>
