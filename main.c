@@ -109,7 +109,7 @@ void condicion_victoria(){
 
 // Función al clickear el boton 1
 void on_clicked_1(GtkWidget *widget, gpointer data) {
-    GtkLabel *label = (GtkLabel*) data;
+    
     button_1 = (GtkButton*) widget;
     gtk_button_set_label(button_1, figura1);
     set_char(&lb1, &figura1);
@@ -122,7 +122,7 @@ void on_clicked_1(GtkWidget *widget, gpointer data) {
 
 // Función al clickear el boton 2
 void on_clicked_2(GtkWidget *widget, gpointer data) {
-    GtkLabel *label = (GtkLabel*) data;
+    
     button_2= (GtkButton*) widget;
     gtk_button_set_label(button_2, figura1);
     set_char(&lb2, &figura1);
@@ -135,7 +135,7 @@ void on_clicked_2(GtkWidget *widget, gpointer data) {
 
 // Función al clickear el boton 3
 void on_clicked_3(GtkWidget *widget, gpointer data) {
-    GtkLabel *label = (GtkLabel*) data;
+    
     button_3= (GtkButton*) widget;
     gtk_button_set_label(button_3, figura1);
     set_char(&lb3, &figura1);
@@ -147,7 +147,7 @@ void on_clicked_3(GtkWidget *widget, gpointer data) {
 
 // Función al clickear el boton 4
 void on_clicked_4(GtkWidget *widget, gpointer data) {
-    GtkLabel *label = (GtkLabel*) data;
+    
     button_4= (GtkButton*) widget;
     gtk_button_set_label(button_4, figura1);
     set_char(&lb4, &figura1);
@@ -159,7 +159,7 @@ void on_clicked_4(GtkWidget *widget, gpointer data) {
 
 // Función al clickear el boton 5
 void on_clicked_5(GtkWidget *widget, gpointer data) {
-    GtkLabel *label = (GtkLabel*) data;
+    
     button_5= (GtkButton*) widget;
     gtk_button_set_label(button_5, figura1);
     set_char(&lb5, &figura1);
@@ -171,7 +171,7 @@ void on_clicked_5(GtkWidget *widget, gpointer data) {
 
 // Función al clickear el boton 6
 void on_clicked_6(GtkWidget *widget, gpointer data) {
-    GtkLabel *label = (GtkLabel*) data;
+    
     button_6= (GtkButton*) widget;
     gtk_button_set_label(button_6, figura1);
     set_char(&lb6, &figura1);
@@ -183,7 +183,7 @@ void on_clicked_6(GtkWidget *widget, gpointer data) {
 
 // Función al clickear el boton 7
 void on_clicked_7(GtkWidget *widget, gpointer data) {
-    GtkLabel *label = (GtkLabel*) data;
+    
     button_7= (GtkButton*) widget;
     gtk_button_set_label(button_7, figura1);
     set_char(&lb7, &figura1);
@@ -195,7 +195,7 @@ void on_clicked_7(GtkWidget *widget, gpointer data) {
 
 // Función al clickear el boton 8
 void on_clicked_8(GtkWidget *widget, gpointer data) {
-    GtkLabel *label = (GtkLabel*) data;
+    
     button_8= (GtkButton*) widget;
     gtk_button_set_label(button_8, figura1);
     set_char(&lb8, &figura1);
@@ -207,7 +207,7 @@ void on_clicked_8(GtkWidget *widget, gpointer data) {
 
 // Función al clickear el boton 9
 void on_clicked_9(GtkWidget *widget, gpointer data) {
-    GtkLabel *label = (GtkLabel*) data;
+    
     button_9= (GtkButton*) widget;
     gtk_button_set_label(button_9, figura1);
     set_char(&lb9, &figura1);
