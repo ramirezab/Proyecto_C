@@ -81,21 +81,12 @@ void condicion_victoria(){
     }
 
 }
-/*
-void message_winner() {
-      GtkWidget *window *dialog, *label, *container;
-      dialog = gtk_dialog_new();
-      gtk_window_set_transient_for(GTK_WINDOW(dialog),GTK_WINDOW(window));
-      gtk_window_set_title(GTK_WINDOW(dialog), "GANADOR");
-      gtk_window_set_size_request(dialog, 400, 200);
 
-      label = gtk_label_new(figura1);
-      container = gtk_dialog_get_content_area(GTK_DIALOG(dialog));
-      gtk_container_add(GTK_CONTAINER(container),label);
-
-      gtk_widget_show(dialog);
+void winner_game(GtkWidget *widget, gpointer data) {
+  GtkLabel *label = (GtkLabel*) data;
+  label_2 = (GtkLabel*) widget;
+  gtk_label_set_text(label, figura1);
 }
-*/
 
 // Función al clickear el boton 1
 void on_clicked_1(GtkWidget *widget, gpointer data) {
@@ -275,8 +266,8 @@ int main(int argc, char* argv[]) {
     button_9 = GTK_WIDGET(gtk_builder_get_object(builder, "button_9"));
 
     // Muestra el mensaje del label
-    label = GTK_WIDGET(gtk_builder_get_object(builder, "label_1"));
-
+    label_1 = GTK_WIDGET(gtk_builder_get_object(builder, "label_1"));
+    label_2 = GTK_WIDGET(gtk_builder_get_object(builder, "label_2"));
 
     // Señales de coneccion de cada uno de los botones
     g_signal_connect(button_1, "clicked", G_CALLBACK(on_clicked_1), NULL);

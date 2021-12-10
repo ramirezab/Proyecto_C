@@ -23,7 +23,7 @@
             <attributes>
               <attribute name="font-desc" value="Kinnari Bold Oblique 14"/>
               <attribute name="style" value="oblique"/>
-              <attribute name="foreground" value="#34346565a4a4"/>
+              <attribute name="foreground" value="#adad7f7fa8a8"/>
             </attributes>
           </object>
           <packing>
