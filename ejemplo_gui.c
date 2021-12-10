@@ -28,6 +28,7 @@ GtkButton *button_7;
 GtkButton *button_8;
 GtkButton *button_9;
 GtkWidget *label_victory;
+GtkWidget *label_figura;
 
 //  Esta función cambia el valor de la figura cuando se clikea en un cuadro
 void swap(char **a, char **b) {
@@ -55,7 +56,8 @@ void condicion_victoria(){
 
     if (strcmp(lb1, lb2) == 0 && strcmp(lb2, lb3) == 0){
         g_print("Victoria de %s", figura1);
-        gtk_label_set_text(label_victory, ("Victoria de %s" + figura1));
+        gtk_label_set_text(label_victory, "Victoria de");
+        gtk_label_set_text(label_figura, figura1);
         clean_board();
         
     }
@@ -273,9 +275,10 @@ int main(int argc, char* argv[]) {
     // Muestra el mensaje del label
     label = GTK_WIDGET(gtk_builder_get_object(builder, "label_1"));
     label_victory= GTK_WIDGET(gtk_builder_get_object(builder, "label_victory"));
+    label_figura= GTK_WIDGET(gtk_builder_get_object(builder, "label_figura"));
 
     GtkLabel *label_victory = (GtkLabel*) label_victory;
-
+    GtkLabel *label_figura = (GtkLabel*) label_figura;
 
     // Señales de coneccion de cada uno de los botones
     g_signal_connect(button_1, "clicked", G_CALLBACK(on_clicked_1), NULL);
