@@ -27,6 +27,7 @@ GtkButton *button_6;
 GtkButton *button_7;
 GtkButton *button_8;
 GtkButton *button_9;
+GtkWidget *label_victory;
 
 //  Esta función cambia el valor de la figura cuando se clikea en un cuadro
 void swap(char **a, char **b) {
@@ -43,13 +44,20 @@ void set_char(char **a, char **b){
 }
 void clean_board();
 
+
+    
 // Mediante la función "strcmp" se comparan los valores de las variables
 // para elegir a un ganador
+
 void condicion_victoria(){
+
+    
 
     if (strcmp(lb1, lb2) == 0 && strcmp(lb2, lb3) == 0){
         g_print("Victoria de %s", figura1);
+        gtk_label_set_text(label_victory, ("Victoria de %s" + figura1));
         clean_board();
+        
     }
     else if (strcmp(lb4, lb5) == 0 && strcmp(lb5, lb6) == 0){
         g_print("Victoria de %s", figura1);
@@ -81,25 +89,10 @@ void condicion_victoria(){
     }
 
 }
-/*
-void message_winner() {
-      GtkWidget *window *dialog, *label, *container;
-      dialog = gtk_dialog_new();
-      gtk_window_set_transient_for(GTK_WINDOW(dialog),GTK_WINDOW(window));
-      gtk_window_set_title(GTK_WINDOW(dialog), "GANADOR");
-      gtk_window_set_size_request(dialog, 400, 200);
 
-      label = gtk_label_new(figura1);
-      container = gtk_dialog_get_content_area(GTK_DIALOG(dialog));
-      gtk_container_add(GTK_CONTAINER(container),label);
-
-      gtk_widget_show(dialog);
-}
-*/
 
 // Función al clickear el boton 1
 void on_clicked_1(GtkWidget *widget, gpointer data) {
-
     GtkLabel *label = (GtkLabel*) data;
     button_1 = (GtkButton*) widget;
     gtk_button_set_label(button_1, figura1);
@@ -234,6 +227,8 @@ void clean_board(){
 
 }
 
+
+
 // Ciclo principal del programa
 int main(int argc, char* argv[]) {
 
@@ -253,6 +248,7 @@ int main(int argc, char* argv[]) {
     GtkWidget *button_9;
 
     GtkWidget *label;
+    
 
     // Inicializador del GTK
     gtk_init(&argc, &argv);
@@ -276,6 +272,9 @@ int main(int argc, char* argv[]) {
 
     // Muestra el mensaje del label
     label = GTK_WIDGET(gtk_builder_get_object(builder, "label_1"));
+    label_victory= GTK_WIDGET(gtk_builder_get_object(builder, "label_victory"));
+
+    GtkLabel *label_victory = (GtkLabel*) label_victory;
 
 
     // Señales de coneccion de cada uno de los botones
