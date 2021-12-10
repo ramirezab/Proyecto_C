@@ -46,47 +46,61 @@ void set_char(char **a, char **b){
 void clean_board();
 
 
-    
+
 // Mediante la función "strcmp" se comparan los valores de las variables
 // para elegir a un ganador
 
 void condicion_victoria(){
 
-    
+
 
     if (strcmp(lb1, lb2) == 0 && strcmp(lb2, lb3) == 0){
         g_print("Victoria de %s", figura1);
         gtk_label_set_text(label_victory, "Victoria de");
         gtk_label_set_text(label_figura, figura1);
         clean_board();
-        
+
     }
     else if (strcmp(lb4, lb5) == 0 && strcmp(lb5, lb6) == 0){
         g_print("Victoria de %s", figura1);
+        gtk_label_set_text(label_victory, "Victoria de");
+        gtk_label_set_text(label_figura, figura1);
         clean_board();
     }
     else if (strcmp(lb7, lb8) == 0 && strcmp(lb8, lb9) == 0){
         g_print("Victoria de %s", figura1);
+        gtk_label_set_text(label_victory, "Victoria de");
+        gtk_label_set_text(label_figura, figura1);
         clean_board();
     }
     else if (strcmp(lb1, lb4) == 0 && strcmp(lb4, lb7) == 0){
         g_print("Victoria de %s", figura1);
+        gtk_label_set_text(label_victory, "Victoria de");
+        gtk_label_set_text(label_figura, figura1);
         clean_board();
     }
     else if (strcmp(lb2, lb5) == 0 && strcmp(lb5, lb8) == 0){
         g_print("Victoria de %s", figura1);
+        gtk_label_set_text(label_victory, "Victoria de");
+        gtk_label_set_text(label_figura, figura1);
         clean_board();
     }
     else if (strcmp(lb3, lb6) == 0 && strcmp(lb6, lb9) == 0){
         g_print("Victoria de %s", figura1);
+        gtk_label_set_text(label_victory, "Victoria de");
+        gtk_label_set_text(label_figura, figura1);
         clean_board();
     }
     else if (strcmp(lb1, lb5) == 0 && strcmp(lb5, lb9) == 0){
         g_print("Victoria de %s", figura1);
+        gtk_label_set_text(label_victory, "Victoria de");
+        gtk_label_set_text(label_figura, figura1);
         clean_board();
     }
     else if (strcmp(lb3, lb5) == 0 && strcmp(lb5, lb7) == 0){
         g_print("Victoria de %s", figura1);
+        gtk_label_set_text(label_victory, "Victoria de");
+        gtk_label_set_text(label_figura, figura1);
         clean_board();
     }
 
@@ -250,7 +264,7 @@ int main(int argc, char* argv[]) {
     GtkWidget *button_9;
 
     GtkWidget *label;
-    
+
 
     // Inicializador del GTK
     gtk_init(&argc, &argv);
